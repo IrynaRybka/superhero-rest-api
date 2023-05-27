@@ -62,8 +62,8 @@ const updateHeroById = catchAsync(async (req, res) => {
     origin_description,
     superpowers,
     catch_phrase,
-    images
-  } = req.body;
+    images,
+ } = req.body;
 
   const updatedHero = await Hero.findByIdAndUpdate(id, {
     nickname,
@@ -71,7 +71,7 @@ const updateHeroById = catchAsync(async (req, res) => {
     origin_description,
     superpowers,
     catch_phrase,
-    images
+    images,
   }, { new: true });
 
   res.status(200).json({
