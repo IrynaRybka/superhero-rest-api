@@ -21,4 +21,5 @@ router
 router
   .route('/update-image')
   .patch(heroMiddlewares.uploadHeroPhoto, heroController.updateImageHero);
+
 module.exports = router;
