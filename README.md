@@ -12,9 +12,6 @@
   '/' - get - getHeroes - отримати лист з всіма супеогероями
   '/' - get - getPaginationHero - отримати лист з всіма супергероями з пагінацією але не більше ніж 5 за раз;
 
-
-
-  '/:id'
    '/:id' - get -getHeroById - отримати супергероя за id
    '/:id' - patch - updateHeroById - перейменувати героя або внести інші зміни
    '/:id' - delete - deleteHeroById - видалити героя по id;
