@@ -33,16 +33,19 @@ const createHero = catchAsync(async (req, res) => {
  * get list heroes
  */
 const getHeroes = catchAsync(async (req, res) => {
-  const { page, limit } = req.query;
+  const { page = 1, limit = 5 } = req.query;
   const heroes = await Hero.find().sort({ createdAt: 1 }).lean();
 
-  const paginationPage = +page || 1;
-  const paginationLimit = +limit || 5;
+  const paginationPage = +page;
+  const paginationLimit = +limit;
   const skip = (paginationPage - 1) * paginationLimit;
 
-  const heroPagination = heroes.skip(skip).limit(paginationLimit);
+  // const heroPagination = heroes.skip(skip).limit(paginationLimit);
+  const heroPagination = await Hero.find().skip(skip).limit(paginationLimit);
 
   res.status(200).json({
+    heroes,
+    total: heroes.length,
     heroPagination,
   });
 });
