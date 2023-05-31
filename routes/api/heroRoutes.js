@@ -8,8 +8,7 @@ const router = express.Router();
 router
   .route('/')
   .post(heroMiddlewares.checkHeroData, heroController.createHero)
-  .get(heroController.getHeroes)
-  .get(heroController.getPaginationHero);
+  .get(heroController.getHeroes);
 
 router.use('/:id', heroMiddlewares.checkHeroId);
 

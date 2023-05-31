@@ -24,7 +24,7 @@ const heroSchema = new Schema(
     },
     images: {
       type: String,
-      required: 'hepo.jpg',
+      required: true,
     }
   },
   {
